@@ -2,42 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Send Email</title>
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script type="text/javascript">
-    // Initialize EmailJS with your user/public key
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Send a quick message to your best friend 💬" />
+  <meta name="theme-color" content="#4a90e2" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta property="og:title" content="Quick Message 💬" />
+  <meta property="og:description" content="Send a quick message to your best friend" />
+  <meta property="og:type" content="website" />
+  <title>Quick Message 💬</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
     (function() {
-      emailjs.init("nEtn5ctV68HTbDaO8"); // Replace with your EmailJS public key
+      emailjs.init("nEtn5ctV68HTbDaO8"); 
     })();
   </script>
 </head>
 <body>
-  <form id="emailForm">
-    <input type="text" id="message" placeholder="Your message" required />
-    <button type="submit">Send Email</button>
-  </form>
+  <div class="split-screen">
+    <div class="image-section"></div>
+    <div class="content-section">
+      <div class="container">
+        <h1>💬 Hello mon amoureuse!</h1>
+        <p class="intro"> Ton copain te manque! Envoie lui un message alors! 😊</p>
+        <form id="messageForm">
+          <div class="checkbox-grid">
+            <label><input type="checkbox" class="option-checkbox" value="Let's catch up soon!"> Let's catch up soon!</label>
+            <label><input type="checkbox" class="option-checkbox" value="Hope you have a great day!"> Hope you have a great day!</label>
+            <label><input type="checkbox" class="option-checkbox" value="Miss hanging out with you"> Miss hanging out with you</label>
+            <label><input type="checkbox" class="option-checkbox" value="You always make me laugh"> You always make me laugh</label>
+            <label><input type="checkbox" class="option-checkbox" value="Thanks for being awesome"> Thanks for being awesome</label>
+            <label><input type="checkbox" class="option-checkbox" value="Let's plan something fun"> Let's plan something fun</label>
+          </div>
+          <textarea 
+            id="message" 
+            placeholder="But where is Sabiz?" 
+            required 
+            maxlength="500"
+            autocomplete="off"
+            spellcheck="true"
+          ></textarea>
+          <button type="submit">Send Message ✨</button>
+          <p class="status" id="statusMessage"></p>
+        </form>
+      </div>
+    </div>
+  </div>
 
-  <script>
-    document.getElementById("emailForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const message = document.getElementById("message").value;
-
-      emailjs.send("service_qgh9dcz", "template_5pvuhk9", {
-        message: message,
-        title: "Website Contact Form"
-      }).then(
-        function(response) {
-          alert("Email sent successfully!");
-          document.getElementById("emailForm").reset();
-        },
-        function(error) {
-          console.error("Email sending failed:", error);
-          alert("Failed to send email.");
-        }
-      );
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
