@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Send Email</title>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript">
+    // Initialize EmailJS with your user/public key
+    (function() {
+      emailjs.init("nEtn5ctV68HTbDaO8"); // Replace with your EmailJS public key
+    })();
+  </script>
+</head>
+<body>
+  <form id="emailForm">
+    <input type="text" id="message" placeholder="Your message" required />
+    <button type="submit">Send Email</button>
+  </form>
+
+  <script>
+    document.getElementById("emailForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const message = document.getElementById("message").value;
+
+      emailjs.send("service_qgh9dcz", "template_5pvuhk9", {
+        message: message,
+        title: "Website Contact Form"
+      }).then(
+        function(response) {
+          alert("Email sent successfully!");
+          document.getElementById("emailForm").reset();
+        },
+        function(error) {
+          console.error("Email sending failed:", error);
+          alert("Failed to send email.");
+        }
+      );
+    });
+  </script>
+</body>
+</html>
