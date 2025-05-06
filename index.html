@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script type="module">
-    import emailjs from 'https://cdn.emailjs.com/dist/email.min.mjs';
-    emailjs.init("nEtn5ctV68HTbDaO8"); // your public key
-    window.emailjs = emailjs; // expose globally so script.js can use it
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("nEtn5ctV68HTbDaO8");
+    })();
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -21,13 +22,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="apple-touch-icon" href="icon-192.png" />
-  <script type="module">
-    import emailjs from 'https://cdn.emailjs.com/dist/email.min.mjs';
-  
-    emailjs.init("nEtn5ctV68HTbDaO8");
-  
-    window.emailjs = emailjs; // expose globally for script.js
-  </script>
 </head>
 <body>
   <div class="split-screen">

@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
     messageInput.parentNode.insertBefore(counter, messageInput.nextSibling);
 
     const updateCounter = utils.debounce(function() {
-        const remaining = maxLength - this.value.length;
+        const remaining = maxLength - (this.value ? this.value.length : 0);
         counter.textContent = `${remaining} characters left`;
         counter.style.color = remaining < 50 ? '#4a90e2' : '#666';
         
