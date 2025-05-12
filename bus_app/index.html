@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bus Departure App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>🚌 Bus Departure Readiness</h1>
+    <p class="subtitle">How many people are ready to go in the bus?</p>
+    <div class="counter-section">
+      <button id="decrement" aria-label="Decrease">-</button>
+      <span id="readyCount">0</span>
+      <button id="increment" aria-label="Increase">+</button>
+    </div>
+    <p id="statusMessage" class="status-message"></p>
+    <button id="adminLoginBtn" class="admin-btn">Admin Login</button>
+  </div>
+  <div id="adminPanel" class="admin-panel" style="display:none;">
+    <h2>Admin Panel</h2>
+    <div class="admin-row">
+      <label for="thresholdInput">Set Threshold:</label>
+      <input type="number" id="thresholdInput" min="1" style="width:60px;" />
+      <button id="setThresholdBtn">Set</button>
+    </div>
+    <div class="admin-row">
+      <button id="resetBtn">Reset Counter</button>
+    </div>
+    <div class="admin-row">
+      <label for="lockToggle">Lock Counter:</label>
+      <input type="checkbox" id="lockToggle" />
+    </div>
+  </div>
+  <!-- Firebase App (core) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <!-- Firebase Realtime Database -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCUW3W4f1HMRjLjf7s3AotLwPS27XXkgoo",
+      authDomain: "bus-app-ad2bb.firebaseapp.com",
+      databaseURL: "https://bus-app-ad2bb-default-rtdb.firebaseio.com",
+      projectId: "bus-app-ad2bb",
+      storageBucket: "bus-app-ad2bb.firebasestorage.app",
+      messagingSenderId: "518296723835",
+      appId: "1:518296723835:web:04b4f5125e0127b904ddde"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html> 

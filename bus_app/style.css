@@ -1,0 +1,195 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container {
+  background: #fff;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(74, 144, 226, 0.12);
+  text-align: center;
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2d3a4a;
+}
+
+.subtitle {
+  color: #4a90e2;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.counter-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#readyCount {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #4a90e2;
+  min-width: 40px;
+  display: inline-block;
+}
+
+button {
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  outline: none;
+}
+button:active {
+  background: #357ab8;
+  transform: scale(0.96);
+}
+button:disabled {
+  background: #b0c4de;
+  cursor: not-allowed;
+}
+
+.status-message {
+  font-size: 1.1rem;
+  color: #2d3a4a;
+  min-height: 1.5em;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.status-message.depart {
+  color: #27ae60;
+  font-weight: 600;
+  animation: pop 0.4s;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Admin Panel Styles */
+.admin-btn {
+  margin-top: 1.2rem;
+  background: #f5a623;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: auto;
+  height: auto;
+}
+.admin-btn:hover {
+  background: #d48806;
+}
+
+.admin-panel {
+  background: #fffbe6;
+  border: 1.5px solid #ffe58f;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(245, 166, 35, 0.08);
+  max-width: 350px;
+  width: 100%;
+  margin: 1.5rem auto 0 auto;
+  padding: 1.2rem 1.2rem 1rem 1.2rem;
+  text-align: left;
+  box-sizing: border-box;
+}
+.admin-panel h2 {
+  font-size: 1.2rem;
+  color: #d48806;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.admin-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+#thresholdInput {
+  font-size: 1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ffe58f;
+  width: 60px;
+}
+#setThresholdBtn, #resetBtn {
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.3rem 0.9rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: auto;
+  height: auto;
+}
+#setThresholdBtn:hover, #resetBtn:hover {
+  background: #357ab8;
+}
+#lockToggle {
+  width: 20px;
+  height: 20px;
+  accent-color: #f5a623;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .container, .admin-panel {
+    padding: 1.5rem 1.2rem;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  h1 {
+    font-size: 1.7rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .admin-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .admin-row button {
+    margin-top: 0.3rem;
+  }
+} 
